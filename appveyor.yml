@@ -3,7 +3,8 @@ skip_tags: true
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
-  assembly_version: '1.0.{build}'
+  assembly_file_version: '{AssemblyMajor}.{AssemblyMinor}.{build}.{AssemblyRevision}'
+  assembly_informational_version: '{AssemblyMajor}.{AssemblyMinor}.{build}'
 before_build:
   - nuget restore
 build:
