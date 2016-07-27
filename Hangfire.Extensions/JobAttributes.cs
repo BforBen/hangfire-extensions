@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Hangfire.Common;
 using Hangfire.States;
 using Hangfire.Storage;
@@ -15,7 +14,7 @@ namespace Hangfire.Attributes
         /// <param name="queue">Queue name.</param>
         public UseQueueFromParameterAttribute(int parameterIndex)
         {
-            this.ParameterIndex = parameterIndex;
+            ParameterIndex = parameterIndex;
         }
 
         public int ParameterIndex { get; private set; }
@@ -25,7 +24,7 @@ namespace Hangfire.Attributes
             var enqueuedState = context.CandidateState as EnqueuedState;
             if (enqueuedState != null)
             {
-                enqueuedState.Queue = context.Job.Arguments[ParameterIndex].Replace("\"", string.Empty);
+                enqueuedState.Queue = (context.BackgroundJob.Job.Args[ParameterIndex] as string).Replace("\"", string.Empty);
             }
         }
     }

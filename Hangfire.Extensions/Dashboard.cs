@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Hangfire.Dashboard
+﻿namespace Hangfire.Dashboard
 {
-    public class NoAuthFilter : IAuthorizationFilter
+    public class NoAuthFilter : IDashboardAuthorizationFilter
     {
-        public bool Authorize(IDictionary<string, object> owinEnvironment)
+        public bool Authorize(DashboardContext context)
         {
             return true;
         }

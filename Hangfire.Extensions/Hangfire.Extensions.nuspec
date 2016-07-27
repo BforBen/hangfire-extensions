@@ -15,7 +15,7 @@
     <copyright>Copyright Guildford Borough Council 2015</copyright>
     <language>en-GB</language>
     <dependencies>
-       <dependency id="Hangfire.Core" version="1.4.3" />
+       <dependency id="Hangfire.Core" version="1.6.0" />
     </dependencies>
   </metadata>
 </package>
